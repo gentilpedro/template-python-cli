@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Env
+.env
+
+# Build / packaging output (keep template.spec tracked)
+build/
+dist/
+output/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

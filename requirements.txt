@@ -1,0 +1,2 @@
+# Sem dependências externas por padrão. Adicione aqui conforme o projeto
+# crescer (ex: requests, selenium, pandas, ttkbootstrap).
