@@ -23,7 +23,7 @@ template.spec        # spec do PyInstaller (edite ao crescer o projeto)
 A separação `domain/` → `use_cases/` → `infra/`/`ui/` é a mesma usada no PyInvest real: regra de
 negócio não conhece I/O, e I/O (arquivo, rede, GUI) nunca contém regra de negócio.
 
-## Como usar
+## Como criar um projeto novo
 
 **Via CLI (recomendado):**
 
