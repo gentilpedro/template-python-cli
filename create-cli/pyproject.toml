@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "create-gentilpedro-python"
+version = "1.0.0"
+description = "Scaffold a new project from Gentil Pedro's Python CLI/automation template"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Gentil Pedro" }]
+keywords = ["template", "scaffold", "create", "cli", "automation"]
+
+[project.urls]
+Repository = "https://github.com/gentilpedro/template-python-cli"
+
+[project.scripts]
+create-gentilpedro-python = "create_gentilpedro_python.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/create_gentilpedro_python"]

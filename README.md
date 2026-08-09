@@ -23,7 +23,19 @@ template.spec        # spec do PyInstaller (edite ao crescer o projeto)
 A separação `domain/` → `use_cases/` → `infra/`/`ui/` é a mesma usada no PyInvest real: regra de
 negócio não conhece I/O, e I/O (arquivo, rede, GUI) nunca contém regra de negócio.
 
-## Como usar este template
+## Como usar
+
+**Via CLI (recomendado):**
+
+```bash
+pipx run create-gentilpedro-python minha-app
+cd minha-app
+python -m venv .venv
+```
+
+(ou `uvx create-gentilpedro-python minha-app` se você usa [uv](https://docs.astral.sh/uv/))
+
+**Via GitHub template repo:**
 
 1. No GitHub, clique em **Use this template** neste repositório.
 2. Clone o repositório novo e ajuste o nome do projeto em `build_app.py`, `template.spec` e neste README.

@@ -26,3 +26,34 @@ jobs:
         run: |
           VERSION="1.0.${{ github.run_number }}"
           gh release create "v$VERSION" --title "v$VERSION" --generate-notes
+
+  publish-pypi:
+    needs: release
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Sync template into package
+        run: python create-cli/sync_template.py
+
+      - name: Bump version
+        run: |
+          VERSION="1.0.${{ github.run_number }}"
+          sed -i "s/^version = .*/version = \"$VERSION\"/" create-cli/pyproject.toml
+
+      - name: Build package
+        run: |
+          pip install build
+          python -m build create-cli --outdir create-cli/dist
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: create-cli/dist
